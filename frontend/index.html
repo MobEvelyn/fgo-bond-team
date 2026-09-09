@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="FGO 国服特定对象羁绊礼装配队工具，玩家数据只在浏览器本地处理。">
+  <title>FGO 羁绊配队</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header><span>FGO CN · 国服</span><h1>羁绊配队</h1><p>筛选你的 Box，找出能覆盖最多队员的特定对象羁绊礼装。</p></header>
+  <main>
+    <div id="notice" class="notice hidden" role="status"></div>
+    <section class="panel import-panel">
+      <div class="step"><b>1</b><div><h2>导入玩家数据</h2><p>原始文件只在当前浏览器内解析，不会上传，也不会保存。</p></div></div>
+      <label class="file-picker"><input id="jsonFile" type="file" accept=".json,application/json"><strong>选择 Chaldea JSON</strong><span id="fileName">尚未选择文件</span></label>
+      <div id="profileRow" class="profile-row hidden"><label>国服账号<select id="profileSelect"></select></label><button id="jsonImportBtn">识别这个账号</button></div>
+      <details><summary>也可以粘贴 toplogin 字符串</summary><textarea id="captureText" placeholder="粘贴 eyJ... 开头的完整字符串"></textarea><button id="textImportBtn" class="secondary">识别粘贴内容</button></details>
+      <div id="accountState" class="account-state">尚未导入 Box</div>
+    </section>
+    <section id="workspace" class="panel hidden">
+      <div class="step"><b>2</b><div><h2>筛选候选从者</h2><p>多个特性需要同时满足；点击头像可预先锁定 1～6 名队员。</p></div></div>
+      <div class="filters"><label>职阶<select id="classFilter"><option value="">全部职阶</option></select></label><label>特性一<select id="traitA"><option value="">不限</option></select></label><label>特性二<select id="traitB"><option value="">不限</option></select></label><label>搜索<input id="search" placeholder="输入从者名字"></label></div>
+      <div class="candidate-head"><strong id="candidateCount"></strong><span id="selectedCount">已选 0 / 6</span></div>
+      <div id="pickedList" class="picked-list"></div>
+      <div id="servantList" class="servant-list"></div>
+      <button id="analyzeBtn" class="analyze">分析羁绊礼装覆盖</button>
+    </section>
+    <section id="analysis" class="results hidden"><div class="result-head"><div><span>BOND CE COVERAGE</span><h2>覆盖结果</h2></div><small>只显示当前账号持有的特定对象羁绊礼装</small></div><div id="ceList"></div></section>
+  </main>
+  <footer>非官方玩家工具 · 公共游戏资料来自 Atlas Academy</footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
