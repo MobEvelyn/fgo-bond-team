@@ -1,0 +1,17 @@
+构建方法：
+1. 在项目目录打开 PowerShell。
+2. 执行：powershell -ExecutionPolicy Bypass -File .\build.ps1
+3. 将 dist\FGO羁绊配队助手 整个文件夹压缩后发给朋友。
+
+朋友的使用方法：
+1. 完整解压压缩包，不能只把 exe 单独拿出来。
+2. 双击 FGO羁绊配队助手.exe。
+3. 保持黑色窗口开启，在自动打开的浏览器中操作。
+4. 第一次使用时先在页面中同步国服游戏数据。
+5. 可以粘贴 toplogin 字符串，也可以上传 Chaldea 导出的用户数据 JSON；如有多个国服账号，请在下拉框中选择。
+6. 使用完毕后关闭黑色窗口。
+
+账号数据保存在每台电脑自己的：
+%LOCALAPPDATA%\FgoTeam\data
+
+导入的 toplogin/Chaldea 字符串只交给本机程序处理，不会被上传到作者电脑。

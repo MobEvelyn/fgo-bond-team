@@ -1,0 +1,26 @@
+# Player/account data and downloaded game data
+data/
+chaldea-userdata-*.json
+account.json
+
+# Python environments and caches
+.build-venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# PyInstaller output
+build/
+dist/
+*.exe
+*.zip
+
+# Local configuration and editor files
+.env
+.env.*
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
